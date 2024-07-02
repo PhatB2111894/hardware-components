@@ -5,7 +5,7 @@ include_once __DIR__ . "/../partials/header.php";
 <link rel="stylesheet" href="./css/gioithieu.css">
 <div class="body body_content">
   <div class="container">
-    <img src="./picture/bangchuyen.jpg" class="d-block w-100 h-75 m-3">
+    <img src="./picture/bangchuyen3.jpg" class="d-block w-100 h-75 m-3">
     <div class="row">
       <h1 class="title-comm"><span class="title-holder">GIỚI THIỆU</span></h1>
       <h4 class="addFont text-center dongchu mt-3 mb-5"> <b>Thời Số xin kính chào quý khách</b> </h4>
