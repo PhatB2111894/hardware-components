@@ -61,7 +61,7 @@ include_once __DIR__ . "/../partials/header.php";
                                 <div class='mt-2 pr-3 ps-2 content'>
                                     <p class='fs-6'>Tình trạng: " . htmlspecialchars($status) . " </p>
                                 </div>
-                                <h3 class='fs-5 ps-2'>Giá bán: " . number_format(htmlspecialchars($data['price']), 0, ',', '.') . 'đ' . "</h3>
+                                <h3 class='fs-5 ps-2'>Giá bán: " . number_format(htmlspecialchars($data['price']) - htmlspecialchars($data['price']) * htmlspecialchars($data['discount_percent'] / 100), 0, ',', '.') . 'đ' . "</h3>
                                 <span>  
                                     <h5 class='fs-5 p-2 content'>Số Lượng:  
                                     <input class='w-10 text-center' type='number' size='3' name='soluong' value='0' min = '1'>
