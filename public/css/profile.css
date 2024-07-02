@@ -1,0 +1,123 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+.main_form {
+    border-radius: 20px;
+    max-width: 450px;
+    padding: 1rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    margin:auto ;
+}
+
+.main_form_title {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.main_form .input {
+    position: relative;
+    display: block;
+}
+
+.main_form .input #left {
+    color: rgb(0, 60, 255);
+    border-color: #ccc;
+    transition: border-color 0.5s;
+    left: 5px;
+    padding-right: 3px;
+    border-right-width: 1px;
+    border-right-style: solid;
+    position: absolute;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.main_form .input .right {
+    color: rgb(0, 60, 255);
+    border-color: #ccc;
+    transition: border-color 0.5s;
+    right: 5px;
+    padding-right: 3px;
+    border-left-width: 1px;
+    border-left-style: solid;
+    position: absolute;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.main_form .input input,
+.main_form .input select {
+    padding-left: 50px !important;
+    display: block;
+    width: 100%;
+    height: 50px !important;
+    padding: 8px 10px;
+    margin: 10px 0;
+    outline: none;
+    border: 2px solid #ccc;
+    background: #f4f4f4;
+    color: #384047;
+    appearance: normal;
+}
+
+.main_form .input input::placeholder{
+    color: #ccc;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.main_form .input input:focus::placeholder,
+.main_form .input input:hover::placeholder {
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+    color: #384047;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.main_form img {
+    object-fit: cover;
+    object-position: center;
+    width: 170px;
+    height: 170px;
+
+}
+
+.main_form #pimg {
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+    border: 7px solid rgb(0, 60, 255);
+}
+
+.main_form .pimgedit {
+    z-index: 5;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    background-color: rgb(0, 60, 255);
+    color: #fff;
+    border-radius: 50%;
+    margin-left: -30px;
+    cursor: pointer;
+    object-fit: cover;
+    object-position: center;
+}
+
+.main .myProfile h4 {
+    font-size: 25px;
+    padding: 5px 20px;
+}

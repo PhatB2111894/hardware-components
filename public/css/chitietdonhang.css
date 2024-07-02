@@ -1,0 +1,117 @@
+/* .body {
+    background-color: #ecedee;
+    font-family: Arial, sans-serif; /* Thay đổi font chữ 
+} */
+
+.card {
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.thumbnail_images ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    padding: 0; /* Loại bỏ padding mặc định */
+}
+
+.thumbnail_images ul li {
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.thumbnail_images ul li img {
+    max-width: 70px;
+    height: auto;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.thumbnail_images ul li.active img {
+    border-color: #fc666f;
+}
+
+.main_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    height: 400px;
+    overflow: hidden;
+}
+
+#main_product_image {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+}
+
+.product-description {
+    margin-top: 30px;
+}
+
+.product-description h2 {
+    font-size: 20px;
+    background-color: #fc666f;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 20px;
+}
+
+.product-description p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.product-suggestion {
+    margin-top: 50px;
+}
+
+.product-suggestion h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.product-suggestion .panel {
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.product-suggestion .panel-body {
+    padding: 20px;
+}
+
+.product-suggestion .panel-body h4 {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.product-suggestion .panel-body p.price {
+    font-size: 10px;
+    color: #fc666f;
+    margin-bottom: 10px;
+}
+
+.product-suggestion .panel-body button {
+    background-color: #fc666f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.product-suggestion .panel-body button:hover {
+    background-color: #ff5252;
+}
+
+

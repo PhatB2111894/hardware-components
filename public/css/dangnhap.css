@@ -1,0 +1,107 @@
+#forgot {
+    min-width: 100px;
+    margin-left: auto;
+    text-decoration: none
+}
+
+a:hover {
+    text-decoration: none
+}
+
+.form-inline label {
+    padding-left: 10px;
+    margin: 0;
+    cursor: pointer
+}
+
+.panel {
+    min-height: 380px;
+    box-shadow: 20px 20px 80px rgb(218, 218, 218);
+    border-radius: 12px
+}
+
+.input-field {
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    color: #063e9d;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='number'] {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: 100%
+}
+
+.fa-eye-slash.btn {
+    border: none;
+    outline: none;
+    box-shadow: none
+}
+
+.picture {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative
+}
+
+a[target='_blank'] {
+    position: relative;
+    transition: all 0.1s ease-in-out
+}
+
+.bordert {
+    border-top: 1px solid #aaa;
+    position: relative
+}
+
+.bordert:after {
+    content: "hoặc kết nối với";
+    position: absolute;
+    top: -13px;
+    left: 33%;
+    background-color: #fff;
+    padding: 0px 8px
+}
+
+form img {
+    width: 200px;
+    height: 200px !important;
+    object-fit: cover;
+    object-position: center;
+}
+
+#pimg {
+    cursor: pointer;
+    border: 4px solid #063e9d;
+}
+
+.pimgedit {
+    z-index: 5;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    background-color: #063e9d;
+    color: #fff;
+    border-radius: 50%;
+    margin-left: -25px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.text-color {
+    color: #063e9d;
+}
+
+.text-color:hover {
+    opacity: 0.8;
+}
