@@ -66,25 +66,25 @@ $id = $_REQUEST['id'];
 ?>
 
 <header>
-  <div class="container ">
+  <div class="container-fluid ">
     <div class=" d-flex align-items-center justify-content-between">
-      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none">
+      <!-- <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none">
         <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
           <use xlink:href="#bootstrap"></use>
         </svg>
-      </a>
+      </a> -->
 
       <ul class="nav col-11 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
         <li><a href="./index.php?id=home"><img src="D:/NLCS_B2105633/Shop_Hoa/public/picture/logo.png" alt=""></a></li>
-        <li class="d-flex align-items-center"><a href="./index.php?id=home#" id="home" class="px-2 text-header text-shadow fs-6 <?php if (isset($id) && $id == 'home') echo 'active' ?>">Trang Chủ</a></li>
-        <li class="d-flex align-items-center"><a href="./hoa.php?id=hoa#" id="hoa" class="px-2 text-header text-shadow fs-6 <?php if (isset($id) && $id == 'hoa') echo 'active' ?>">Thiết bị điện tử</a></li>
-        <li class="d-flex align-items-center"><a href="./hoacuoi.php?id=hoacuoi#" id="hoacuoi" class="px-2 text-header text-shadow fs-6 <?php if (isset($id) && $id == 'hoacuoi') echo 'active' ?>">Linh kiện điện tử</a></li>
-        <li class="d-flex align-items-center"><a href="./hoachucmung.php?id=hoachucmung#" id="hoachucmung" class="px-2 text-header text-shadow fs-6 <?php if (isset($id) && $id == 'hoachucmung') echo 'active' ?>">Phụ kiện điện tử</a></li>
-        <li class="d-flex align-items-center"><a href="./gioithieu.php?id=info#" id="info" class="px-2 text-header text-shadow fs-6 <?php if (isset($id) && $id == 'info') echo 'active' ?>">Giới Thiệu</a></li>
+        <li class="d-flex align-items-center"><a href="./index.php?id=home#" id="home" class="px-2 text-header text-shadow fs-6 <?php if (isset($id) && $id == 'home') echo 'active' ?>">TRANG CHỦ</a></li>
+        <li class="d-flex align-items-center"><a href="./hoa.php?id=hoa#" id="hoa" class="px-2 text-header text-shadow fs-6 <?php if (isset($id) && $id == 'hoa') echo 'active' ?>">THIẾT BỊ ĐIỆN TỬ</a></li>
+        <li class="d-flex align-items-center"><a href="./hoacuoi.php?id=hoacuoi#" id="hoacuoi" class="px-2 text-header text-shadow fs-6 <?php if (isset($id) && $id == 'hoacuoi') echo 'active' ?>">LINH KIỆN ĐIỆN TỬ</a></li>
+        <li class="d-flex align-items-center"><a href="./hoachucmung.php?id=hoachucmung#" id="hoachucmung" class="px-2 text-header text-shadow fs-6 <?php if (isset($id) && $id == 'hoachucmung') echo 'active' ?>">PHỤ KIỆN ĐIỆN TỬ</a></li>
+        <li class="d-flex align-items-center"><a href="./gioithieu.php?id=info#" id="info" class="px-2 text-header text-shadow fs-6 <?php if (isset($id) && $id == 'info') echo 'active' ?>">GIỚI THIỆU</a></li>
       </ul>
-      <div class="dropdown">
+      <div style="margin-right: 30px;" class="dropdown">
         <button class="btnl dropdown-toggle fs-6" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-           Thương hiệu
+           THƯƠNG HIỆU
         </button>
         <ul class="dropdown-menu text-header text-shadow dropdown" aria-labelledby="dropdownMenuButton">
           <li><a class="dropdown-item text-header text-shadow" href="./loaihoa.php?flowerName=apple">Apple</a></li>
@@ -116,8 +116,8 @@ $id = $_REQUEST['id'];
 
       </div>
       <div class="text-end notLogin">
-        <button type="button" class="btn my-btn btn_modify "><a class="text-decoration-none text-light" href="./dangnhap.php">Đăng Nhập</a></button>
-        <button type="button" class="btn btn-warning opacity-75 btn_modify"><a class="text-decoration-none text-dark" href="./dangky.php">Đăng Ký</a></button>
+        <button style="width: 120px; background-color: #063E9D" type="button" class="btn-login btn btn_modify "><a class="text-decoration-none text-light" href="./dangnhap.php">Đăng Nhập</a></button>
+        <button style="width: 120px; background-color: #FFCA2C" type="button" class="btn-register btn btn_modify"><a class="text-decoration-none text-dark" href="./dangky.php">Đăng Ký</a></button>
       </div>
       <div class="logined">
         <div class=logined_modify>

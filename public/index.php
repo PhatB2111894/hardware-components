@@ -225,7 +225,7 @@ $id_user = $_SESSION['id'] ?? '';
             <div>
                 <h2> Quyền lợi khách hàng của Thời Số</h2>
                 <p class="ms-3"><i class="icon_benefit pe-3 fa-solid fa-file-signature"></i> Hợp đồng mua bán rõ ràng</p>
-                <p class="ms-3"><i class="icon_benefit pe-3 fa-solid fa-truck-arrow-right"></i> Miễn phí giao hàng khắp 64 tỉnh thành</p>
+                <p class="ms-3"><i class="icon_benefit pe-3 fa-solid fa-truck-arrow-right"></i> Ship COD 63 tỉnh thành</p>
                 <p class="ms-3"><i class="icon_benefit pe-3 fa-solid fa-book-open-reader"></i> Chính sách đổi trả và bảo hành</p>
                 <!-- <p class="ms-3"><i class="icon_benefit pe-3 fa-solid fa-syringe"></i> Cam kết Hoa Tươi</p> -->
             </div>
