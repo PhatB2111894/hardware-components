@@ -13,7 +13,7 @@ $total_pages = ceil($total_records / $limit);
 $page = isset($_GET['page']) && !empty($_GET['page']) ? $_GET['page'] : 1;
 ?>
 <div class='container body_content'>
-    <h1 class="title-comm p-3"><span class="title-holder"> LINH KIỆN ĐIỆN TỬ</span></h1>
+    <h1 class="title-comm p-3"><span class="title-holder"> PHỤ KIỆN ĐIỆN TỬ</span></h1>
     <div class='row product-list'>
         <?php
         try {
