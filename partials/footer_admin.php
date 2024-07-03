@@ -6,7 +6,7 @@
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
             <!-- Left -->
             <div class="me-5 d-none d-lg-block">
-                <span class="fst-italic fs-5">Hãy kết nối với Queen Shop</span>
+                <span class="fst-italic fs-5">Hãy kết nối với Thời Số</span>
             </div>
             <!-- Left -->
 
@@ -57,19 +57,16 @@
                             Thông tin về Shop
                         </h6>
                         <p class="footer-item">
-                            <a href="./index.php" class="text-reset text-decoration-none">Trang Chủ </a>
+                            <a href="../index.php?id=home" class="text-reset text-decoration-none">Trang Chủ </a>
                         </p>
                         <p class="footer-item">
-                            <a href="./hoa.php" class="text-reset text-decoration-none">Hoa </a>
+                            <a href="../index.php?id=hoa" class="text-reset text-decoration-none">Thiết bị điện tử </a>
                         </p>
                         <p class="footer-item">
-                            <a href="./hoacuoi.php" class="text-reset text-decoration-none">Hoa Cưới</a>
+                            <a href="../index.php?id=hoacuoi" class="text-reset text-decoration-none">Linh kiện điện tử</a>
                         </p>
                         <p class="footer-item">
-                        <a href="./hoachucmung.php" class="text-reset text-decoration-none">Hoa Chúc Mừng</a>
-                        </p>
-                        <p class="footer-item">
-                            <a href="./giohang.php" class="text-reset text-decoration-none">Giỏ Hàng</a>
+                            <a href="../public/art.php" class="text-reset text-decoration-none">Giỏ Hàng</a>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -81,16 +78,10 @@
                             Hệ Thống Chi Nhánh
                         </h6>
                         <p class="footer-item">
-                            <a href="#!" class="text-reset text-decoration-none ">Thành phố Hồ Chí Minh </a>
+                            <a href="#!" class="text-reset text-decoration-none ">51A2 - Đ 3/2 - P. Xuân Khánh - Q. Ninh Kiều - TP Cần Thơ</a>
                         </p>
                         <p class="footer-item">
-                            <a href="#!" class="text-reset text-decoration-none ">Cần Thơ</a>
-                        </p>
-                        <p class="footer-item">
-                            <a href="#!" class="text-reset text-decoration-none ">Trà Vinh</a>
-                        </p>
-                        <p class="footer-item">
-                            <a href="#!" class="text-reset text-decoration-none ">Hậu Giang </a>
+                            <a href="#!" class="text-reset text-decoration-none ">30/48K - Đ Nguyễn Văn Linh - P. Hưng Lợi - Q. Ninh Kiều - TP Cần Thơ</a>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -99,12 +90,12 @@
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4">Địa chỉ liên hệ</h6>
-                        <p class="footer-item"><i class="text-color fas fa-home me-3"></i> Ấp Hoà Đức,xã Hoà An, huyện Phụng Hiệp, tỉnh Hậu Giang</p>
+                        <p class="footer-item"><i class="text-color fas fa-home me-3"></i>30/48K - Đ Nguyễn Văn Linh - P. Hưng Lợi - Q. Ninh Kiều - TP Cần Thơ</p>
                         <p class="footer-item">
                             <i class="text-color fas fa-envelope me-3"></i>
-                            queenshop@gmail.com
+                            ctythoiso@gmail.com
                         </p>
-                        <p class="footer-item"><i class="text-color fas fa-phone me-3"></i> Hotline: 0395549131</p>
+                        <p class="footer-item"><i class="text-color fas fa-phone me-3"></i> Hotline: 0968 60 67 67</p>
 
                     </div>
                     <!-- Grid column -->
@@ -115,9 +106,9 @@
         <!-- Section: Links  -->
 
         <!-- Copyright -->
-        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-            <span class="fw-bold">&copy;</span> 2023 Copyright:
-            <a class="text-reset fw-bold" href="https://mdbootstrap.com/"> Cao Nguyễn Mỹ Quyên</a>
+        <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.05);">
+            <span class="fw-bold">&copy;</span> 2024 Copyright:
+            <a class="text-reset fw-bold" href="https://thoiso.vn/"> Thời Số</a>
         </div>
         <div id="backtop">
             <i class="fa-solid fa-arrow-up"></i>

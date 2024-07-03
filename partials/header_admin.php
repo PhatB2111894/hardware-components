@@ -35,6 +35,8 @@ $id = $_REQUEST['id'];
         <li class=" d-flex align-items-center"><a href="../admin/admin_sp.php?id=product#" class="px-2 text-header text-shadow fs-5 <?php if(isset($id) && $id == 'product') echo 'active' ?>">Quản lý sản phẩm</a></li>
         <li class="d-flex align-items-center "><a href="../admin/admin_bill.php?id=bill#" class="px-2 text-header text-shadow fs-5 <?php if(isset($id) && $id == 'bill') echo 'active' ?>">Quản lý đơn hàng</a></li>
         <li class="d-flex align-items-center "><a href="../admin/admin_invoice.php?id=invoice#" class="px-2 text-header text-shadow fs-5 <?php if(isset($id) && $id == 'invoice') echo 'active' ?>">Quản lý hoá đơn</a></li>
+        <li class="d-flex align-items-center "><a href="../admin/admin_revenue.php?id=revenue#" class="px-2 text-header text-shadow fs-5 <?php if(isset($id) && $id == 'revenue') echo 'active' ?>">Thống kê doanh thu</a></li>
+
       </ul>
       <div class="text-end notLogin">
         <div class="logined">
