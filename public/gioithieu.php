@@ -14,23 +14,18 @@ include_once __DIR__ . "/../partials/header.php";
           <div class="col order-last">
             <h1 class="demuc1 mb-4">Cam Kết</h1>
             <p class="underline"> 
-            Thời Số là một cửa hàng chuyên cung cấp thiết bị điện tử, đồ dùng công nghệ đến khắp các tỉnh, thành phố trên cả nước. Với Thông điệp: không chỉ là hoa, mà còn là yêu thương chúng tôi hướng đến một dịch vụ chuyên nghiệp trong việc truyền tải những thông điệp, cảm xúc của người tặng đến người nhận.
-            Chúng tôi cam kết cung cấp những loại hoa tươi sạch, chất lượng nhất, được thu hoạch và sắp xếp cẩn thận để đảm bảo bạn nhận được sản phẩm tốt nhất.Đội ngũ nhân viên giàu kinh nghiệm của chúng tôi sẵn sàng hỗ trợ bạn trong mọi nhu cầu, từ việc chọn lựa hoa đến giao hàng và chăm sóc khách hàng sau bán hàng.
+            THỜI SỐ là cửa hàng chuyên cung cấp thiết bị điện tử và linh kiện điện tử đến khắp các tỉnh, thành phố trên cả nước. Với thông điệp: "Không chỉ là công nghệ, mà còn là sự tiện ích", chúng tôi hướng đến một dịch vụ chuyên nghiệp trong việc cung cấp các sản phẩm và giải pháp công nghệ. Chúng tôi cam kết cung cấp những thiết bị điện tử chất lượng nhất, được kiểm tra và đảm bảo để mang đến cho bạn sản phẩm tốt nhất. Đội ngũ nhân viên giàu kinh nghiệm của chúng tôi sẵn sàng hỗ trợ bạn trong mọi nhu cầu, từ việc chọn lựa sản phẩm đến giao hàng và chăm sóc khách hàng sau bán hàng.
             </p> </div>
           <div class="col">
             <h1 class="demuc1 mb-4">Mục Tiêu</h1>
-            <p class="underline"><b>Queen Shop</b> được mở bởi các thành viên chung niềm đam mê nuôi dưỡng, chăm sóc hoa.Tạo ra những bó hoa chất lượng cao với sự tươi mới và độc đáo.
-                Phục vụ mỗi khách hàng với sự tận tâm và chu đáo nhất.
-                Mang lại niềm vui và hạnh phúc cho người nhận mỗi khi nhận được những bó hoa từ chúng tôi.
-                Xây dựng một cộng đồng yêu hoa và đam mê sự đẹp của thiên nhiên.
+            <p class="underline">THỜI SỐ được mở bởi các thành viên có niềm đam mê công nghệ. Chúng tôi tạo ra những sản phẩm chất lượng cao với độ bền và hiệu suất vượt trội. Phục vụ mỗi khách hàng với sự tận tâm và chu đáo nhất, mang lại sự hài lòng và tiện ích tối đa. Xây dựng một cộng đồng yêu công nghệ và đam mê sự phát triển của thời đại số.
+
             </p>
           </div>
           <div class="col order-first">
             <h1 class="demuc1 mb-4">Thương Hiệu</h1>
             <p class="underline">
-              <b>Queen Shop</b> là hoa được thành lập từ 8/2008 được sự tin tưởng của khách hàng trong suốt thời gian hoạt động đến nay cửa hàng đã ngày một phát triển và xây dựng được thương hiệu trong lòng quý khách.
-              <b>Queen Shop </b> Với hơn 5 năm kinh nghiệm trong ngành, chúng tôi tự hào là địa chỉ mua sắm uy tín và đáng tin cậy cho mọi người yêu hoa.
-              Với phương châm: “Luôn đặt chất lượng lên hàng đầu”, <b>Queen Shop</b> tin rằng, quý khách hàng sẽ luôn hài lòng về chất lượng dịch vụ mà chúng tôi cung cấp.
+            CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ THỜI SỐ là cửa hàng bán thiết bị điện tử và linh kiện điện tử được thành lập từ tháng 7/2018. Được sự tin tưởng của khách hàng trong suốt thời gian hoạt động, cửa hàng đã ngày càng phát triển và xây dựng được thương hiệu vững mạnh trong lòng quý khách. Với hơn 6 năm kinh nghiệm trong ngành, chúng tôi tự hào là địa chỉ mua sắm uy tín và đáng tin cậy cho mọi người yêu công nghệ. Với phương châm: "Luôn đặt chất lượng lên hàng đầu", THỜI SỐ tin rằng quý khách hàng sẽ luôn hài lòng về chất lượng dịch vụ mà chúng tôi cung cấp.
             </p>
           </div>
         </div>
