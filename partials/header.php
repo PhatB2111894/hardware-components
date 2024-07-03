@@ -66,7 +66,7 @@ $id = $_REQUEST['id'];
 ?>
 
 <header>
-  <div class="container ">
+  <div class="container-fluid ">
     <div class=" d-flex align-items-center justify-content-between">
       <!-- <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none">
         <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
@@ -82,7 +82,7 @@ $id = $_REQUEST['id'];
         <li class="d-flex align-items-center"><a href="./hoachucmung.php?id=hoachucmung#" id="hoachucmung" class="px-2 text-header text-shadow fs-6 <?php if (isset($id) && $id == 'hoachucmung') echo 'active' ?>">PHỤ KIỆN ĐIỆN TỬ</a></li>
         <li class="d-flex align-items-center"><a href="./gioithieu.php?id=info#" id="info" class="px-2 text-header text-shadow fs-6 <?php if (isset($id) && $id == 'info') echo 'active' ?>">GIỚI THIỆU</a></li>
       </ul>
-      <div class="dropdown">
+      <div style="margin-right: 30px;" class="dropdown">
         <button class="btnl dropdown-toggle fs-6" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
            THƯƠNG HIỆU
         </button>
@@ -116,8 +116,8 @@ $id = $_REQUEST['id'];
 
       </div>
       <div class="text-end notLogin">
-        <button type="button" class="btn my-btn btn_modify "><a class="text-decoration-none text-light" href="./dangnhap.php">Đăng Nhập</a></button>
-        <button type="button" class="btn btn-warning opacity-75 btn_modify"><a class="text-decoration-none text-dark" href="./dangky.php">Đăng Ký</a></button>
+        <button style="width: 120px; background-color: #063E9D" type="button" class="btn-login btn btn_modify "><a class="text-decoration-none text-light" href="./dangnhap.php">Đăng Nhập</a></button>
+        <button style="width: 120px; background-color: #FFCA2C" type="button" class="btn-register btn btn_modify"><a class="text-decoration-none text-dark" href="./dangky.php">Đăng Ký</a></button>
       </div>
       <div class="logined">
         <div class=logined_modify>
