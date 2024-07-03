@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start();    
 include_once __DIR__ . "/../partials/connectDB.php";
 include_once __DIR__ . "/../partials/header.php";
 $id_user = $_SESSION['id'] ?? '';
