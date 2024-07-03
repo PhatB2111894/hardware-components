@@ -65,7 +65,7 @@ $flowers = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <a href='./chitietdonhang.php?id=" . htmlspecialchars($pet['id']) . "' class='pro-title'>" . htmlspecialchars($pet['flowerName']) . "</a>
                                 </h4>
                                 <p class='price'>
-                                    <a href='./chitietdonhang.php?id=" . $pet['id'] . "'>Giá : " . number_format($pet['price'], 0, ',', '.') . 'đ' . " </a>   
+                                    <a href='./chitietdonhang.php?id=" . $pet['id'] . "'>Giá: " . number_format($pet['price']- ($pet['price'] * $pet['discount_percent'] / 100), 0, ',', '.') . 'đ' . " </a>   
                                 </p> 
                                 <span>  
                                     <h5 class='fs-5'>Số Lượng:  

@@ -65,18 +65,23 @@ $id_user = $_SESSION['id'] ?? '';
                         <div class='panel-body text-center'>
                             <h4> 
                                 <a href='./chitietdonhang.php?id=" . htmlspecialchars($pet['id']) . "' class='pro-title'>" . htmlspecialchars($pet['flowerName']) . "</a>
-                            </h4>
+                            </h4>";
+                            
+                        if ($pet['discount_percent'] > 0) {
+                            echo "
+                            <p class='price'>
+                                <a href='./chitietdonhang.php?id=" . $pet['id'] . "'Giá gốc: <del>" . number_format($pet['price'], 0, ',', '.') . 'đ' . "</del><strong class='fs-6 ps-2' style='color:red'>- " . $pet['discount_percent'] . "%</strong></a>   
+                            </p> 
+                            <p class='discount_percent'>
+                                <a href='./chitietdonhang.php?id=" . $pet['id'] . "'>Giá còn : " . number_format($pet['price'] - ($pet['price'] * $pet['discount_percent'] / 100), 0, ',', '.') . 'đ' . " </a>   
+                            </p>";
+                        } else {
+                            echo "
                             <p class='price'>
                                 <a href='./chitietdonhang.php?id=" . $pet['id'] . "'>Giá : " . number_format($pet['price'], 0, ',', '.') . 'đ' . " </a>   
-                            </p> ";
-
-        if ($pet['discount_percent'] > 0) {
-            echo "<p class='discount_percent'>
-                                <a href='./chitietdonhang.php?id=" . $pet['id'] . "'>Giảm còn : " . number_format($pet['price'] - ($pet['price'] * $pet['discount_percent'] / 100), 0, ',', '.') . 'đ' . " </a>   
-                            </p>";
-        } else {
-            echo "<p class='discount_percent'><br/></p>"; 
-        }
+                            </p>
+                            <p class='discount_percent'><br/></p>"; 
+                        }
 
         echo " <span>  
                                 <h5 class='fs-10'>Số Lượng:  
@@ -131,11 +136,24 @@ $id_user = $_SESSION['id'] ?? '';
                         <a href='./chitietdonhang.php?id=" . $pet['id'] . "'> <img src='" . $photos['photo1'] . "' alt='' /> </a>
                     </div>
                     <div class='panel-body text-center'>
-                        <h4> <a href='./chitietdonhang.php?id=" . $pet['id'] . "' class='pro-title'>" . $pet['flowerName'] . "</a></h4>
-                        <p class='price'>
-                            <a href='./chitietdonhang.php?id=" . $pet['id'] . "'>Giá : " . number_format($pet['price'], 0, ',', '.') . 'đ' . " </a>   
-                        </p> 
-                            <span>  
+                        <h4> <a href='./chitietdonhang.php?id=" . $pet['id'] . "' class='pro-title'>" . $pet['flowerName'] . "</a></h4>";
+                            
+                        if ($pet['discount_percent'] > 0) {
+                            echo "
+                            <p class='price'>
+                                <a href='./chitietdonhang.php?id=" . $pet['id'] . "'Giá gốc: <del>" . number_format($pet['price'], 0, ',', '.') . "đ" ."</del><strong class='fs-6 ps-2' style='color:red'>- " . $pet['discount_percent'] . "%</strong></a>   
+                            </p> 
+                            <p class='discount_percent'>
+                                <a href='./chitietdonhang.php?id=" . $pet['id'] . "'>Giá còn : " . number_format($pet['price'] - ($pet['price'] * $pet['discount_percent'] / 100), 0, ',', '.') . 'đ' . " </a>   
+                            </p>";
+                        } else {
+                            echo "
+                            <p class='price'>
+                                <a href='./chitietdonhang.php?id=" . $pet['id'] . "'>Giá : " . number_format($pet['price'], 0, ',', '.') . 'đ' . " </a>   
+                            </p>
+                            <p class='discount_percent'><br/></p>"; 
+                        }
+                        echo "  <span>  
                                 <h5 class='fs-5'>Số Lượng:  
                                 <input class='w-25 text-center number-input' type='number' size='3' name='soluong' value='0' min = '1'>
                                 </h5>
@@ -157,9 +175,9 @@ $id_user = $_SESSION['id'] ?? '';
     </div>";
     ?>
     <hr>
-    <div class="banner">
+    <!-- <div class="banner">
         <img src="./picture/banner.png" class="d-block w-100 h-75 m-3" alt="...">
-    </div>
+    </div> -->
     <div class="row">
         <h1 class="title-comm"><span class="title-holder"></i> LIÊN HỆ</span></h1>
         <div class="d-flex justify-content-center">
