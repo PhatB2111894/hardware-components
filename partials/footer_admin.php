@@ -44,7 +44,7 @@
                     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 mt--32">
                         <!-- Content -->
                         <h6 class="text-uppercase fw-bold mb-4">
-                            <a href="#"><img src="../picture/logo.png" alt="" class="w-50"></a>
+                            <a href="#"><img src="../picture/logo1.jpg" alt="" class="w-50"></a>
                         </h6>
                        
                     </div>

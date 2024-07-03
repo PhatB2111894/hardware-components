@@ -17,7 +17,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 1;
         <h1 class="text-center mt-5">Danh sách sản phẩm</h1>
         <div class="row w-100">
             <div class="col-lg-12 col-md-12 col-12">
-                <a href="../admin/add_sp.php?id=product" class="btn my-btn mb-3 ">
+                <a href="../admin/add_sp.php?id=product" class="btn btn-primary my-btn mb-3 ">
                     <i class="fa fa-plus"></i> Thêm sản phẩm
                 </a>
                 <table class="table table-bordered">
@@ -58,7 +58,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 1;
 
                             $photos = json_decode($pet['photoURLs'], true);
                             // $category = $pet['category'] == 1 ? "Hoa" : "Hoa Cưới";
-                            $category = $pet['category'] == 1 ? "Hoa" : ($pet['category'] == 0 ? "Hoa Cưới" : ($pet['category'] == 2 ? "Hoa Chúc Mừng" : "Không xác định"));
+                            $category = $pet['category'] == 1 ? "Thiết bị điện tử" : ($pet['category'] == 0 ? "Linh kiện điện tử" : ($pet['category'] == 2 ? "Phụ kiện điện tử" : "Không xác định"));
 
                             echo "
                             <tr>

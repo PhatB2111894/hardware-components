@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="./css/header.css">
 <link rel="stylesheet" href="./css/index.css">
 
-<link rel="icon" type="image/x-icon" href="./picture/logo.png">
+<link rel="icon" type="image/x-icon" href="./picture/logo1.jpg">
 <title>Thời Số</title> 
 <?php
 if (isset($_SESSION['id'])) {

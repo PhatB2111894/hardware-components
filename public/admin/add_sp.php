@@ -8,7 +8,7 @@ include_once __DIR__ . "../../../partials/header_admin.php";
         <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
             <div class="panel border bg-white">
                 <div class="panel-heading">
-                    <h3 class="pt-3 font-weight-bold text-center ">Thêm sản phẩm</h3>
+                    <h3 class="pt-3 font-weight-bold text-center">Thêm sản phẩm</h3>
                 </div>
                 <div class="panel-body p-3">
                     <form class="form-horizontal" action="../../src/add_sp_logic.php" method="post" enctype="multipart/form-data">
@@ -68,9 +68,9 @@ include_once __DIR__ . "../../../partials/header_admin.php";
                         </div>
                         <div class="form-group py-2">
                             <label for="">Loại: </label>
-                            <input type="radio" name="species" placeholder="Nhập loại sản phẩm" value="hoa" checked> Hoa
-                            <input type="radio" name="species" placeholder="Nhập loại sản phẩm" value="hoacuoi"> Hoa Cưới
-                            <input type="radio" name="species" placeholder="Nhập loại sản phẩm" value="hoachucmung"> Hoa Chúc Mừng
+                            <input type="radio" name="species" placeholder="Nhập loại sản phẩm" value="hoa" checked> Thiết bị
+                            <input type="radio" name="species" placeholder="Nhập loại sản phẩm" value="hoacuoi"> Linh Kiện
+                            <input type="radio" name="species" placeholder="Nhập loại sản phẩm" value="hoachucmung"> Phụ kiện
                         </div>
 
                         <?php
@@ -80,7 +80,7 @@ include_once __DIR__ . "../../../partials/header_admin.php";
                                 echo "<p class='alert alert-danger'>định dạng file không đúng!</p>";
                             }
                         ?>
-                        <button type="submit"  class="btn my-btn w-100 add-sp">Thêm sản phẩm</button>
+                        <button type="submit"  class="btn btn-primary my-btn w-100 add-sp">Thêm sản phẩm</button>
                     </form>
                 </div>
             </div>
