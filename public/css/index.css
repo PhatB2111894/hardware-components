@@ -113,9 +113,8 @@
 
 .product-list .price a {
     color: black;
-    font-size: 18px;
+    font-size: 15px;
 }
-
 .pro-img-details {
     margin-left: -15px;
 }
@@ -499,6 +498,5 @@ a {
     width: 10%;
 }
 .pricee {
-    text-decoration: line-through; /* Gạch ngang giá cũ */
-    color: #999; /* Màu chữ nhạt */
+    color: green;
 }

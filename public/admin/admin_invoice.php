@@ -52,12 +52,30 @@ $stm = $pdo->prepare($query);
 $stm->execute(['firstDayOfMonth' => $firstDayOfMonth, 'lastDayOfMonth' => $lastDayOfMonth]);
 $result = $stm->fetch(PDO::FETCH_ASSOC);
 $totalRevenue = $result['totalRevenue'];
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $new_status = $_POST['new_status'];
+    $order_id = $_POST['order_id'];
+
+    try {
+        // Update ship_status in the database
+        $query = "UPDATE order_details SET ship_status = :new_status WHERE id = :order_id";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([':new_status' => $new_status, ':order_id' => $order_id]);
+
+        // Redirect to the same page or another page
+        header("Location: ../admin/admin_bill.php?id=bill#");
+        exit(); // Ensure script stops after redirection
+    } catch (PDOException $e) {
+        echo "Query failed: " . $e->getMessage();
+    }
+}
 ?>
 
 <section class="body_content">
-    <div class="text-center mt-5">
+    <!-- <div class="text-center mt-5">
     <h3>Tổng doanh thu trong tháng: <?php echo number_format($totalRevenue, 0, ',', '.') . 'đ'; ?></h3>
-</div>
+</div> -->
     <h1 class="text-center mb-5">Danh sách đơn hàng đã duyệt</h1>
     <div class="container">
         <div class="row w-100">
@@ -73,7 +91,7 @@ $totalRevenue = $result['totalRevenue'];
                             <th style="width:7%">Số lượng</th>
                             <th style="width:10%">Tổng tiền</th>
                             <th style="width:12%">Ngày tạo</th>
-                            <th style="width:8%">Trạng thái</th>
+                            <th style="width:8%">Trạng thái vận chuyển</th>
                             <th style="width:16%">Hành động</th>
 
                         </tr>
@@ -91,7 +109,16 @@ $totalRevenue = $result['totalRevenue'];
                             $total_price = number_format(htmlspecialchars($order['total_price']), 0, ',', '.') . 'đ';
                             $create_at = htmlspecialchars($order['create_at']);
                             $status = $order['status_order'] == 2 ? "Đã duyệt" : "Chờ xử lý";
-
+                            $ship = $order['ship_status'];
+                            if($ship == 1){
+                                $ship_status = "Đang chuẩn bị hàng";
+                            }
+                            elseif($ship==2){
+                                $ship_status = "Đã được giao cho đơn vị vận chuyển bạn sẽ sớm nhận được đơn hàng";
+                            }
+                            else{
+                                $ship_status = "Đơn hàng đã được giao thành công";
+                            }
                             // Hiển thị thông tin đơn hàng và nút "Xem hóa đơn" nếu đơn hàng đã duyệt
                             if ($order['status_order'] == 2) {
                                 echo "
@@ -107,7 +134,7 @@ $totalRevenue = $result['totalRevenue'];
                                         <td id='num'>$num</td>
                                         <td id='total_price'>$total_price</td>
                                         <td id='createAt'>$create_at</td>
-                                        <td id='status'>$status</td>
+                                        <td id='status'>$ship_status</td>
                                         <td class='actions' data-th=''>
                                             <div class='text-right'>
                                                 <!-- Nút Xem hóa đơn -->
@@ -137,7 +164,7 @@ $totalRevenue = $result['totalRevenue'];
                                                     <p>Số lượng: $num</p>
                                                     <p>Tổng tiền: $total_price</p>
                                                     <p>Ngày tạo: $create_at</p>
-                                                    <p>Trạng thái: $status</p>
+                                                    <p>Trạng thái vận chuyển: $ship_status</p>
                                                     <p><strong>Hình ảnh sản phẩm:</strong></p>
                                                     <div class='text-center'>
                                                         <img src='" . htmlspecialchars($order['photo_order']) . "' alt='Hình ảnh sản phẩm' class='img-fluid w-25'>
@@ -151,28 +178,28 @@ $totalRevenue = $result['totalRevenue'];
                                 // Modal cho tình trạng vận chuyển
                                 echo "
                                     <div class='modal fade' id='statusModal_$orderId' tabindex='-1' role='dialog' aria-labelledby='statusModalLabel_$orderId' aria-hidden='true'>
-        <div class='modal-dialog' role='document'>
-            <div class='modal-content'>
-                <div class='modal-header'>
-                    <h5 class='modal-title' id='statusModalLabel_$orderId'>Tình trạng đơn hàng</h5>
-                    <button type='button' class='close close-modal' data-dismiss='modal' aria-label='Close'>
-                        <span aria-hidden='true'>&times;</span>
-                    </button>
-                </div>
-                <div class='modal-body'>
-                    <p><strong>Tình trạng hiện tại:</strong> $status</p>
-                    <form class='update-status-form' id='updateStatusForm_$orderId' method='post' action='" . htmlspecialchars($_SERVER['PHP_SELF']) . "'>
-                        <div class='form-group'>
-                            <label for='new_status'>Tình trạng mới:</label>
-                            <select class='form-control' name='new_status' id='new_status_$orderId'>
-                                <option value='1'>Đang chuẩn bị hàng</option>
-                                <option value='2'>Đã được giao cho đơn vị vận chuyển bạn sẽ sớm nhận được đơn hàng</option>
-                                <option value='3'>Đơn hàng được giao thành công</option>
-                            </select>
-                        </div>
-                        <input type='hidden' name='order_id' value='$orderId'>
-                        <button type='submit' class='btn btn-primary'>Lưu thay đổi</button>
-                    </form>
+                                    <div class='modal-dialog' role='document'>
+                                        <div class='modal-content'>
+                                            <div class='modal-header'>
+                                                <h5 class='modal-title' id='statusModalLabel_$orderId'>Tình trạng đơn hàng</h5>
+                                                <button type='button' class='close close-modal' data-dismiss='modal' aria-label='Close'>
+                                                    <span aria-hidden='true'>&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class='modal-body'>
+                                                <p><strong>Trạng thái hiện tại:</strong> $ship_status</p>
+                                                <form class='update-status-form' id='updateStatusForm_$orderId' method='post' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "'>
+                                                <div class='form-group'>
+                                                    <label for='new_status'>Trạng thái mới:</label>
+                                                    <select class='form-control' name='new_status' id='new_status_$orderId'>
+                                                        <option value='1' " . ($ship_status == 1 ? 'selected' : '') . ">Đang chuẩn bị hàng</option>
+                                                        <option value='2' " . ($ship_status == 2 ? 'selected' : '') . ">Đã được giao cho đơn vị vận chuyển bạn sẽ sớm nhận được đơn hàng</option>
+                                                        <option value='3' " . ($ship_status == 3 ? 'selected' : '') . ">Đơn hàng đã được giao thành công</option>
+                                                    </select>
+                                                </div>
+                                                <input type='hidden' name='order_id' value='$orderId'>
+                                                <button type='submit' class='btn btn-primary'>Lưu thay đổi</button>
+                                            </form>
                 </div>
             </div>
         </div>
@@ -238,27 +265,29 @@ include_once __DIR__ . "../../../partials/footer_admin.php";
 
         // Xử lý khi form cập nhật trạng thái vận chuyển được submit
         $('form.update-status-form').submit(function(event) {
-            event.preventDefault(); // Ngăn chặn form gửi đi mặc định
-            var formData = $(this).serialize(); // Thu thập dữ liệu từ form
-            var url = '<?php echo $_SERVER['PHP_SELF']; ?>'; // Đường dẫn đến trang hiện tại
+        event.preventDefault(); // Ngăn chặn form gửi đi mặc định
+        var formData = $(this).serialize(); // Thu thập dữ liệu từ form
+        var url = '<?php echo $_SERVER["PHP_SELF"]; ?>'; // Đường dẫn đến trang hiện tại
 
-            // Lấy id của đơn hàng từ form
-            var orderId = $(this).find('[name="order_id"]').val();
+        // Lấy id của đơn hàng từ form
+        var orderId = $(this).find('[name="order_id"]').val();
 
-            // Gửi yêu cầu AJAX để cập nhật trạng thái vận chuyển
-            $.ajax({
-                type: 'POST',
-                url: url,
-                data: formData,
-                success: function(response) {
-                    alert(response); // Hiển thị thông báo thành công
-                    $('#statusModal_' + orderId).modal('hide'); // Đóng modal sau khi cập nhật
-                    // Cập nhật trạng thái hiển thị trên trang nếu cần
-                },
-                error: function(xhr, status, error) {
-                    console.error(error); // Hiển thị lỗi nếu có
-                }
-            });
+        // Gửi yêu cầu AJAX để cập nhật trạng thái vận chuyển
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: formData,
+            success: function(response) {
+                alert(response); // Hiển thị thông báo thành công
+                $('#statusModal_' + orderId).modal('hide'); // Đóng modal sau khi cập nhật
+                // Cập nhật trạng thái hiển thị trên trang nếu cần
+            },
+            error: function(xhr, status, error) {
+                console.error(error); // Hiển thị lỗi nếu có
+            }
         });
+    });
+
+
     });
 </script>

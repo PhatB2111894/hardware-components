@@ -104,7 +104,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 1;
                                 $id_pro = $_GET['id'];
                                 $id_user = $_GET['user_id'];
                                 try {
-                                    $query = "UPDATE order_details SET status_order = 2 WHERE flower_id = ? AND user_id = ?";
+                                    $query = "UPDATE order_details SET status_order = 2, ship_status = IF(ship_status IS NOT NULL, ship_status, 1) WHERE flower_id = ? AND user_id = ?";
                                     $stmt = $pdo->prepare($query);
                                     $stmt->execute([$id_pro, $id_user]);
 

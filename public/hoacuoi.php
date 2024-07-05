@@ -49,17 +49,22 @@ $page = isset($_GET['page']) && !empty($_GET['page']) ? $_GET['page'] : 1;
                             <div class='panel-body text-center'>
                                 <h4> 
                                     <a href='./chitietdonhang.php?id=" . htmlspecialchars($pet['id']) . "' class='pro-title line-clamp-1'>" . htmlspecialchars($pet['flowerName']) . "</a>
-                                </h4>
+                                </h4>";
+                            if ($pet['discount_percent'] > 0) {
+                            echo "
+                            <p class='price'>
+                                <a href='./chitietdonhang.php?id=" . $pet['id'] . "'>Giá gốc: <del>" . number_format($pet['price'], 0, ',', '.'). 'đ' . "</del><strong class='fs-6 ps-2' style='color:red'> - ". $pet['discount_percent'] ."%</strong></a>   
+                            </p>
+                            <p class='discount_percent'>
+                                <a href='./chitietdonhang.php?id=" . $pet['id'] . "'>Giá còn : " . number_format($pet['price'] - ($pet['price'] * $pet['discount_percent'] / 100), 0, ',', '.') . 'đ' . " </a>   
+                            </p>";
+                            } else {
+                                echo "
                                 <p class='price'>
                                     <a href='./chitietdonhang.php?id=" . $pet['id'] . "'>Giá : " . number_format($pet['price'], 0, ',', '.') . 'đ' . " </a>   
-                                </p> ";
-                                if ($pet['discount_percent'] > 0) {
-            echo "<p class='discount_percent'>
-                                <a href='./chitietdonhang.php?id=" . $pet['id'] . "'>Giảm còn : " . number_format($pet['price'] - ($pet['price'] * $pet['discount_percent'] / 100), 0, ',', '.') . 'đ' . " </a>   
-                            </p>";
-        } else {
-            echo "<p class='discount_percent'><br/></p>";
-        }
+                                </p>
+                                <p class='discount_percent'><br/></p>";
+                            };
             echo " <span>  
                                 <span>  
                                     <h5 class='fs-5'>Số Lượng:  

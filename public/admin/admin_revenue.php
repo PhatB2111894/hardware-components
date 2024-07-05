@@ -1,6 +1,57 @@
 <?php
 session_start();
+ob_start();
+include_once __DIR__ . "../../../partials/connectDB.php";
 include_once __DIR__ . "../../../partials/header_admin.php";
+
+$selectedMonth = isset($_POST['month']) ? $_POST['month'] : date('m');
+$firstDayOfMonth = date('Y-' . $selectedMonth . '-01');
+$lastDayOfMonth = date('Y-' . $selectedMonth . '-t');
+
+$totalRevenue = 0;
+$results = [];
+try {
+    $queryProducts = "
+        SELECT 
+            f.flowerName,
+            SUM(od.num) AS totalQuantity,
+            SUM(od.total_price) AS totalSales
+        FROM 
+            order_details od
+        INNER JOIN 
+            flowers f ON od.flower_id = f.id
+        WHERE 
+            DATE_FORMAT(od.create_at, '%Y-%m') = :selectedMonth
+            AND od.ship_status = 3
+        GROUP BY 
+            od.flower_id, f.flowerName
+    ";
+
+    $stmProducts = $pdo->prepare($queryProducts);
+    $stmProducts->bindValue(':selectedMonth', date('Y-m', strtotime($firstDayOfMonth)));
+    $stmProducts->execute();
+    $results = $stmProducts->fetchAll(PDO::FETCH_ASSOC);
+    // Calculate total revenue for the month
+    $queryTotalRevenue = "
+        SELECT 
+            SUM(od.total_price) AS totalRevenue,
+            SUM(od.total_price) AS totalnumbers
+        FROM 
+            order_details od
+        WHERE 
+            DATE_FORMAT(od.create_at, '%Y-%m') = :selectedMonth
+            AND od.ship_status = 3
+    ";
+
+    $stmTotalRevenue = $pdo->prepare($queryTotalRevenue);
+    $stmTotalRevenue->bindValue(':selectedMonth', date('Y-m', strtotime($firstDayOfMonth)));
+    $stmTotalRevenue->execute();
+    $totalRevenueResult = $stmTotalRevenue->fetch(PDO::FETCH_ASSOC);
+    $totalRevenue = isset($totalRevenueResult['totalRevenue']) ? $totalRevenueResult['totalRevenue'] : 0;
+} catch (PDOException $e) {
+    // Handle database errors
+    echo "Error: " . $e->getMessage();
+}
 ?>
 
 <div class="container body_content">
@@ -9,79 +60,55 @@ include_once __DIR__ . "../../../partials/header_admin.php";
             <h1>Thống kê doanh thu</h1>
         </div>
         <div class="mb-3">
-            <label for=" cars">Thống kê theo:</label>
-                <select id="time">
-                    <option value="volvo">Tháng</option>
-                    <option value="saab">Quý</option>
-                    <option value="opel">Năm</option>
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+            <label for="month">Chọn tháng:</label>
+            <select id="month" name="month">
+                <?php
+                $monthNames = [
+                    1 => 'Tháng 01', 2 => 'Tháng 02', 3 => 'Tháng 03', 4 => 'Tháng 04',
+                    5 => 'Tháng 05', 6 => 'Tháng 06', 7 => 'Tháng 07', 8 => 'Tháng 08',
+                    9 => 'Tháng 09', 10 => 'Tháng 10', 11 => 'Tháng 11', 12 => 'Tháng 12'
+                ];
+
+                foreach ($monthNames as $monthNumber => $monthName) {
+                    $selected = ($monthNumber == $selectedMonth) ? 'selected' : '';
+                    echo "<option value='$monthNumber' $selected>$monthName</option>";
+                }
+                ?>
             </select>
+            <button type="submit" class="btn btn-primary">Xem thống kê</button>
+        </form>
+
         </div>
         <div class="row w-100">
             <div class="col-lg-12 col-md-12 col-12">
+                <h3>Doanh thu trong tháng <?php echo date('m/Y', strtotime($firstDayOfMonth)); ?>:</h3>
+                <p><strong>Tổng doanh thu: </strong><?php echo number_format($totalRevenue, 0, ',', '.') . ' VNĐ'; ?></p>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th style="width:15%">Mã hàng</th>
-                            <th style="width:20%">tên hàng</th>
-                            <th style="width:9%">Đơn vị tính</th>
-                            <th style="width:9%">Số lượng</th>
-                            <th style="width:14%">Đơn giá</th>
-                            <th style="width:18%">Thành tiền (VND)</th>
-                            <th style="width:15%">Ghi chú</th>
+                            <th style="width:50%">Sản phẩm</th>
+                            <th style="width:25%">Số lượng bán được</th>
+                            <th style="width:25%">Doanh thu (VNĐ)</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td style="width:15%">#111124 </td>
-                            <td style="width:20%">iPhone 15 Pro Max </td>
-                            <td style="width:9%">Chiếc </td>
-                            <td style="width:9%">5 </td>
-                            <td style="width:14%">29.290.000 đ </td>
-                            <td style="width:18%">146,450,000 VND </td>
-                            <td style="width:15%"> </td>
-                        </tr>
-                        <tr>
-                            <td style="width:15%">#111128 </td>
-                            <td style="width:20%">SamSung s24 Ultra </td>
-                            <td style="width:9%">Chiếc </td>
-                            <td style="width:9%">8 </td>
-                            <td style="width:14%">23.990.000 đ </td>
-                            <td style="width:18%">191,920,000 VND </td>
-                            <td style="width:15%"> </td>
-                        </tr>
-                        <tr>
-                            <td style="width:15%">#111129 </td>
-                            <td style="width:20%">Xiaomi Redmi Note 13 Pro 5G</td>
-                            <td style="width:9%">Chiếc </td>
-                            <td style="width:9%">25 </td>
-                            <td style="width:14%">8.890.000 đ </td>
-                            <td style="width:18%">222,250,000 VND </td>
-                            <td style="width:15%"> </td>
-                        </tr>
-                        <tr>
-                            <td style="width:15%">#1111210 </td>
-                            <td style="width:20%">macBook Pro 16 inch M3 Max </td>
-                            <td style="width:9%">Chiếc </td>
-                            <td style="width:9%">10 </td>
-                            <td style="width:14%">109.990.000 đ </td>
-                            <td style="width:18%">1.099.900.000 VND </td>
-                            <td style="width:15%"> </td>
-                        </tr>
-                        <tr>
-                            <td style="width:15%">#1111232 </td>
-                            <td style="width:20%">Ram Kingston 8gb DDR5 4800MHz </td>
-                            <td style="width:9%">Chiếc </td>
-                            <td style="width:9%">30 </td>
-                            <td style="width:14%">999.000 đ </td>
-                            <td style="width:18%">49,950,000 VND </td>
-                            <td style="width:15%"> </td>
-                        </tr>
+                        <?php foreach ($results as $row) : ?>
+                            <tr>
+                                <td id='flowerphoto'>
+                                    <?php echo $row['flowerName']; ?>
+                                </td>
+                                <td><?php echo $row['totalQuantity']; ?></td>
+                                <td><?php echo number_format($row['totalSales'], 0, ',', '.') . ' VNĐ'; ?></td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 </div>
+
 <?php
 include_once __DIR__ . "../../../partials/footer_admin.php";
 ?>

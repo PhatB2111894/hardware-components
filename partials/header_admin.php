@@ -17,8 +17,12 @@ if (isset($_SESSION['id'])) {
     echo "Query failed: " . $e->getMessage();
   }
 }
-
-$id = $_REQUEST['id'];
+if (isset($_REQUEST['id'])) {
+  $id = $_REQUEST['id'];
+} else {
+  // Handle the case where $_REQUEST['id'] is not set
+  $id = null; // Or any default value suitable for your application
+}
 ?>
 <header>
   <div class="container ">

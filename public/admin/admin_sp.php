@@ -29,9 +29,9 @@ $page = isset($_GET['page']) ? $_GET['page'] : 1;
                             <th style="width:7%">Màu Sắc</th>
                             <th style="width:5%">Kích Thước</th>
                             <th style="width:5%">Giá bán</th>
-                            <th style="width:5%"> Giam gia</th>
+                            <th style="width:5%">Khuyến mãi</th>
 
-                            <th style="width:15%">Mô tả</th>
+                            <th style="width:15%">Thông số kỹ thuật</th>
                             <th style="width:3%">Phân Loại</th>
                             <th style="width:12%"> Hành động</th>
                         </tr>
