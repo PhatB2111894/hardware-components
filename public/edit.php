@@ -48,7 +48,7 @@ try {
                         <div class="form-group py-1 pb-2">
                             <div class="input-field"> <span class="fas fa-lock px-2"></span> <input id="pwd2" type="password" class="form-control" name="newPassword" placeholder="Nhập mật khẩu mới"> <span class="btn bg-white text-muted"> <span id="showNewPass" class="far fa-eye-slash"></span> </span> </div>
                         </div>
-                        <p>Nhập lại mật khẩu cũ nếu không muốn đổi!!</p>
+                        
                         <?php
                         if (isset($_GET['errorMissing'])) {
                             echo "<div class='alert alert-danger mt-2' role='alert'>
